@@ -21,7 +21,7 @@ Public Class RegisterAdmin
                 MessageBox.Show("Registration successful!")
                 ' Additional actions after successful registration
                 Me.Hide()
-                Form1.Show()
+                Login.Show()
             Else
                 MessageBox.Show("Registration failed. Please try again.")
             End If

@@ -34,8 +34,7 @@ Partial Class Form1
         TabPage6 = New TabPage()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
-        ToolStripStatusLabel2 = New ToolStripStatusLabel()
-        ToolStripStatusLabel3 = New ToolStripStatusLabel()
+        lblWelcome = New ToolStripStatusLabel()
         TabPage2 = New TabPage()
         TabPage3 = New TabPage()
         TabPage4 = New TabPage()
@@ -111,10 +110,11 @@ Partial Class Form1
         ' 
         TabControl2.Controls.Add(TabPage5)
         TabControl2.Controls.Add(TabPage6)
-        TabControl2.Location = New Point(3, 0)
+        TabControl2.Dock = DockStyle.Fill
+        TabControl2.Location = New Point(3, 3)
         TabControl2.Name = "TabControl2"
         TabControl2.SelectedIndex = 0
-        TabControl2.Size = New Size(708, 391)
+        TabControl2.Size = New Size(763, 390)
         TabControl2.TabIndex = 1
         ' 
         ' TabPage5
@@ -122,7 +122,7 @@ Partial Class Form1
         TabPage5.Location = New Point(4, 24)
         TabPage5.Name = "TabPage5"
         TabPage5.Padding = New Padding(3)
-        TabPage5.Size = New Size(700, 363)
+        TabPage5.Size = New Size(755, 362)
         TabPage5.TabIndex = 0
         TabPage5.Text = "Dash"
         TabPage5.UseVisualStyleBackColor = True
@@ -132,14 +132,14 @@ Partial Class Form1
         TabPage6.Location = New Point(4, 24)
         TabPage6.Name = "TabPage6"
         TabPage6.Padding = New Padding(3)
-        TabPage6.Size = New Size(700, 363)
+        TabPage6.Size = New Size(755, 362)
         TabPage6.TabIndex = 1
         TabPage6.Text = "All Artists"
         TabPage6.UseVisualStyleBackColor = True
         ' 
         ' StatusStrip1
         ' 
-        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, ToolStripStatusLabel2, ToolStripStatusLabel3})
+        StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, lblWelcome})
         StatusStrip1.Location = New Point(3, 393)
         StatusStrip1.Name = "StatusStrip1"
         StatusStrip1.Size = New Size(763, 22)
@@ -151,24 +151,18 @@ Partial Class Form1
         ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         ToolStripStatusLabel1.Size = New Size(0, 17)
         ' 
-        ' ToolStripStatusLabel2
+        ' lblWelcome
         ' 
-        ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        ToolStripStatusLabel2.Size = New Size(116, 17)
-        ToolStripStatusLabel2.Text = "Database Connected"
-        ' 
-        ' ToolStripStatusLabel3
-        ' 
-        ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        ToolStripStatusLabel3.Size = New Size(32, 17)
-        ToolStripStatusLabel3.Text = "Total"
+        lblWelcome.Name = "lblWelcome"
+        lblWelcome.Size = New Size(70, 17)
+        lblWelcome.Text = "lblWelcome"
         ' 
         ' TabPage2
         ' 
         TabPage2.Location = New Point(27, 4)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(769, 419)
+        TabPage2.Size = New Size(769, 418)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Albums"
         TabPage2.UseVisualStyleBackColor = True
@@ -177,7 +171,7 @@ Partial Class Form1
         ' 
         TabPage3.Location = New Point(27, 4)
         TabPage3.Name = "TabPage3"
-        TabPage3.Size = New Size(769, 419)
+        TabPage3.Size = New Size(769, 418)
         TabPage3.TabIndex = 2
         TabPage3.Text = "Admins"
         TabPage3.UseVisualStyleBackColor = True
@@ -186,7 +180,7 @@ Partial Class Form1
         ' 
         TabPage4.Location = New Point(27, 4)
         TabPage4.Name = "TabPage4"
-        TabPage4.Size = New Size(769, 419)
+        TabPage4.Size = New Size(769, 418)
         TabPage4.TabIndex = 3
         TabPage4.Text = "Orders"
         TabPage4.UseVisualStyleBackColor = True
@@ -226,9 +220,8 @@ Partial Class Form1
     Friend WithEvents ContactToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents TabControl2 As TabControl
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents TabPage6 As TabPage
-    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
+    Friend WithEvents lblWelcome As ToolStripStatusLabel
 End Class

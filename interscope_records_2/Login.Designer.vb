@@ -88,25 +88,30 @@ Partial Class Login
         ' 
         ' btnlogin
         ' 
-        btnlogin.Location = New Point(444, 186)
+        btnlogin.BackColor = SystemColors.AppWorkspace
+        btnlogin.FlatAppearance.BorderColor = Color.Yellow
+        btnlogin.FlatAppearance.BorderSize = 0
+        btnlogin.FlatStyle = FlatStyle.Flat
+        btnlogin.ForeColor = SystemColors.ControlLightLight
+        btnlogin.Location = New Point(444, 172)
         btnlogin.Name = "btnlogin"
         btnlogin.Size = New Size(75, 23)
         btnlogin.TabIndex = 6
         btnlogin.Text = "Login"
-        btnlogin.UseVisualStyleBackColor = True
+        btnlogin.UseVisualStyleBackColor = False
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
         Label4.Font = New Font("Segoe UI", 9F, FontStyle.Underline, GraphicsUnit.Point, CByte(0))
-        Label4.ForeColor = SystemColors.ActiveCaption
+        Label4.ForeColor = SystemColors.Highlight
         Label4.Location = New Point(266, 252)
         Label4.Name = "Label4"
         Label4.Size = New Size(110, 15)
         Label4.TabIndex = 7
         Label4.Text = "create a new admin"
         ' 
-        ' Form1
+        ' Login
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
@@ -120,7 +125,7 @@ Partial Class Login
         Controls.Add(Label1)
         Controls.Add(txtpassword)
         Controls.Add(txtusername)
-        Name = "Form1"
+        Name = "Login"
         Text = "Login"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

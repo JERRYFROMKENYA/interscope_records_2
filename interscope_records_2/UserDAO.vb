@@ -9,7 +9,9 @@ Public Class UserDAO
 
     Private Sub LogAdminCreation(username As String)
         Try
-            Using writer As New StreamWriter(securityLogPath, True)
+            Dim fullPath As String = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, securityLogPath)
+            Console.WriteLine($"Writing to security log: {fullPath}")
+            Using writer As New StreamWriter(fullPath, True)
                 Dim logEntry As String = $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")},Admin Created,{username}"
                 writer.WriteLine(logEntry)
             End Using
@@ -20,7 +22,9 @@ Public Class UserDAO
     End Sub
     Private Sub LogUserLogin(username As String)
         Try
-            Using writer As New StreamWriter(securityLogPath, True)
+            Dim fullPath As String = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, securityLogPath)
+            Console.WriteLine($"Writing to security log: {fullPath}")
+            Using writer As New StreamWriter(fullPath, True)
                 Dim logEntry As String = $"{DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")},User Login,{username}"
                 writer.WriteLine(logEntry)
             End Using
@@ -57,9 +61,14 @@ Public Class UserDAO
                 Try
                     connection.Open()
                     Dim count As Integer = CInt(command.ExecuteScalar())
+
                     If count > 0 Then
                         ' Log successful login
                         LogUserLogin(username)
+
+                        ' Store logged-in username in UserSession singleton
+                        UserSession.Instance.LoggedInUsername = username
+
                         Return True
                     Else
                         Return False

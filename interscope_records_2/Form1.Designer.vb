@@ -27,22 +27,31 @@ Partial Class Form1
         EditToolStripMenuItem = New ToolStripMenuItem()
         HelpToolStripMenuItem = New ToolStripMenuItem()
         ContactToolStripMenuItem = New ToolStripMenuItem()
-        TabControl1 = New TabControl()
-        TabPage1 = New TabPage()
-        TabControl2 = New TabControl()
-        TabPage5 = New TabPage()
-        TabPage6 = New TabPage()
+        miniToolStrip = New StatusStrip()
         StatusStrip1 = New StatusStrip()
         ToolStripStatusLabel1 = New ToolStripStatusLabel()
         lblWelcome = New ToolStripStatusLabel()
-        TabPage2 = New TabPage()
-        TabPage3 = New TabPage()
-        TabPage4 = New TabPage()
+        home = New GroupBox()
+        btnAlbum = New Button()
+        btnArtist = New Button()
+        btnOrder = New Button()
+        btnAdmin = New Button()
+        lbldash = New Label()
+        GroupBox4 = New GroupBox()
+        lblorders = New Label()
+        GBAlbums = New GroupBox()
+        lblalbums = New Label()
+        GroupBox2 = New GroupBox()
+        lblartists = New Label()
+        GroupBox1 = New GroupBox()
+        lbladmin = New Label()
         MenuStrip1.SuspendLayout()
-        TabControl1.SuspendLayout()
-        TabPage1.SuspendLayout()
-        TabControl2.SuspendLayout()
         StatusStrip1.SuspendLayout()
+        home.SuspendLayout()
+        GroupBox4.SuspendLayout()
+        GBAlbums.SuspendLayout()
+        GroupBox2.SuspendLayout()
+        GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
         ' MenuStrip1
@@ -79,71 +88,24 @@ Partial Class Form1
         ContactToolStripMenuItem.Size = New Size(61, 20)
         ContactToolStripMenuItem.Text = "Contact"
         ' 
-        ' TabControl1
+        ' miniToolStrip
         ' 
-        TabControl1.Alignment = TabAlignment.Left
-        TabControl1.Controls.Add(TabPage1)
-        TabControl1.Controls.Add(TabPage2)
-        TabControl1.Controls.Add(TabPage3)
-        TabControl1.Controls.Add(TabPage4)
-        TabControl1.Dock = DockStyle.Fill
-        TabControl1.Location = New Point(0, 24)
-        TabControl1.Multiline = True
-        TabControl1.Name = "TabControl1"
-        TabControl1.SelectedIndex = 0
-        TabControl1.Size = New Size(800, 426)
-        TabControl1.TabIndex = 2
-        ' 
-        ' TabPage1
-        ' 
-        TabPage1.Controls.Add(TabControl2)
-        TabPage1.Controls.Add(StatusStrip1)
-        TabPage1.Location = New Point(27, 4)
-        TabPage1.Name = "TabPage1"
-        TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(769, 418)
-        TabPage1.TabIndex = 0
-        TabPage1.Text = "Artists"
-        TabPage1.UseVisualStyleBackColor = True
-        ' 
-        ' TabControl2
-        ' 
-        TabControl2.Controls.Add(TabPage5)
-        TabControl2.Controls.Add(TabPage6)
-        TabControl2.Dock = DockStyle.Fill
-        TabControl2.Location = New Point(3, 3)
-        TabControl2.Name = "TabControl2"
-        TabControl2.SelectedIndex = 0
-        TabControl2.Size = New Size(763, 390)
-        TabControl2.TabIndex = 1
-        ' 
-        ' TabPage5
-        ' 
-        TabPage5.Location = New Point(4, 24)
-        TabPage5.Name = "TabPage5"
-        TabPage5.Padding = New Padding(3)
-        TabPage5.Size = New Size(755, 362)
-        TabPage5.TabIndex = 0
-        TabPage5.Text = "Dash"
-        TabPage5.UseVisualStyleBackColor = True
-        ' 
-        ' TabPage6
-        ' 
-        TabPage6.Location = New Point(4, 24)
-        TabPage6.Name = "TabPage6"
-        TabPage6.Padding = New Padding(3)
-        TabPage6.Size = New Size(755, 362)
-        TabPage6.TabIndex = 1
-        TabPage6.Text = "All Artists"
-        TabPage6.UseVisualStyleBackColor = True
+        miniToolStrip.AccessibleName = "New item selection"
+        miniToolStrip.AccessibleRole = AccessibleRole.ButtonDropDown
+        miniToolStrip.AutoSize = False
+        miniToolStrip.Dock = DockStyle.None
+        miniToolStrip.Location = New Point(71, 1)
+        miniToolStrip.Name = "miniToolStrip"
+        miniToolStrip.Size = New Size(763, 22)
+        miniToolStrip.TabIndex = 0
         ' 
         ' StatusStrip1
         ' 
         StatusStrip1.Items.AddRange(New ToolStripItem() {ToolStripStatusLabel1, lblWelcome})
-        StatusStrip1.Location = New Point(3, 393)
+        StatusStrip1.Location = New Point(0, 428)
         StatusStrip1.Name = "StatusStrip1"
-        StatusStrip1.Size = New Size(763, 22)
-        StatusStrip1.TabIndex = 0
+        StatusStrip1.Size = New Size(800, 22)
+        StatusStrip1.TabIndex = 2
         StatusStrip1.Text = "StatusStrip1"
         ' 
         ' ToolStripStatusLabel1
@@ -157,33 +119,147 @@ Partial Class Form1
         lblWelcome.Size = New Size(70, 17)
         lblWelcome.Text = "lblWelcome"
         ' 
-        ' TabPage2
+        ' home
         ' 
-        TabPage2.Location = New Point(27, 4)
-        TabPage2.Name = "TabPage2"
-        TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(769, 418)
-        TabPage2.TabIndex = 1
-        TabPage2.Text = "Albums"
-        TabPage2.UseVisualStyleBackColor = True
+        home.Controls.Add(btnAlbum)
+        home.Controls.Add(btnArtist)
+        home.Controls.Add(btnOrder)
+        home.Controls.Add(btnAdmin)
+        home.Controls.Add(lbldash)
+        home.Controls.Add(GroupBox4)
+        home.Controls.Add(GBAlbums)
+        home.Controls.Add(GroupBox2)
+        home.Controls.Add(GroupBox1)
+        home.Dock = DockStyle.Fill
+        home.Location = New Point(0, 24)
+        home.Name = "home"
+        home.Size = New Size(800, 404)
+        home.TabIndex = 3
+        home.TabStop = False
         ' 
-        ' TabPage3
+        ' btnAlbum
         ' 
-        TabPage3.Location = New Point(27, 4)
-        TabPage3.Name = "TabPage3"
-        TabPage3.Size = New Size(769, 418)
-        TabPage3.TabIndex = 2
-        TabPage3.Text = "Admins"
-        TabPage3.UseVisualStyleBackColor = True
+        btnAlbum.Location = New Point(87, 152)
+        btnAlbum.Name = "btnAlbum"
+        btnAlbum.Size = New Size(75, 23)
+        btnAlbum.TabIndex = 9
+        btnAlbum.Text = "Album"
+        btnAlbum.UseVisualStyleBackColor = True
         ' 
-        ' TabPage4
+        ' btnArtist
         ' 
-        TabPage4.Location = New Point(27, 4)
-        TabPage4.Name = "TabPage4"
-        TabPage4.Size = New Size(769, 418)
-        TabPage4.TabIndex = 3
-        TabPage4.Text = "Orders"
-        TabPage4.UseVisualStyleBackColor = True
+        btnArtist.Location = New Point(87, 108)
+        btnArtist.Name = "btnArtist"
+        btnArtist.Size = New Size(75, 23)
+        btnArtist.TabIndex = 8
+        btnArtist.Text = "Artists"
+        btnArtist.UseVisualStyleBackColor = True
+        ' 
+        ' btnOrder
+        ' 
+        btnOrder.Location = New Point(6, 152)
+        btnOrder.Name = "btnOrder"
+        btnOrder.Size = New Size(75, 23)
+        btnOrder.TabIndex = 7
+        btnOrder.Text = "Orders"
+        btnOrder.UseVisualStyleBackColor = True
+        ' 
+        ' btnAdmin
+        ' 
+        btnAdmin.Location = New Point(6, 108)
+        btnAdmin.Name = "btnAdmin"
+        btnAdmin.Size = New Size(75, 23)
+        btnAdmin.TabIndex = 5
+        btnAdmin.Text = "Admin"
+        btnAdmin.UseVisualStyleBackColor = True
+        ' 
+        ' lbldash
+        ' 
+        lbldash.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        lbldash.AutoSize = True
+        lbldash.Font = New Font("Bahnschrift", 27.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbldash.Location = New Point(0, 19)
+        lbldash.Name = "lbldash"
+        lbldash.Size = New Size(200, 45)
+        lbldash.TabIndex = 4
+        lbldash.Text = "Dashboard"
+        ' 
+        ' GroupBox4
+        ' 
+        GroupBox4.Controls.Add(lblorders)
+        GroupBox4.Location = New Point(440, 236)
+        GroupBox4.Name = "GroupBox4"
+        GroupBox4.Size = New Size(200, 100)
+        GroupBox4.TabIndex = 3
+        GroupBox4.TabStop = False
+        GroupBox4.Text = "Orders"
+        ' 
+        ' lblorders
+        ' 
+        lblorders.AutoSize = True
+        lblorders.Location = New Point(72, 44)
+        lblorders.Name = "lblorders"
+        lblorders.Size = New Size(41, 15)
+        lblorders.TabIndex = 0
+        lblorders.Text = "Label3"
+        ' 
+        ' GBAlbums
+        ' 
+        GBAlbums.Controls.Add(lblalbums)
+        GBAlbums.Location = New Point(210, 236)
+        GBAlbums.Name = "GBAlbums"
+        GBAlbums.Size = New Size(200, 100)
+        GBAlbums.TabIndex = 2
+        GBAlbums.TabStop = False
+        GBAlbums.Text = "Albums"
+        ' 
+        ' lblalbums
+        ' 
+        lblalbums.AutoSize = True
+        lblalbums.Location = New Point(69, 44)
+        lblalbums.Name = "lblalbums"
+        lblalbums.Size = New Size(41, 15)
+        lblalbums.TabIndex = 0
+        lblalbums.Text = "Label4"
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(lblartists)
+        GroupBox2.Location = New Point(440, 108)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(200, 100)
+        GroupBox2.TabIndex = 1
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Artists"
+        ' 
+        ' lblartists
+        ' 
+        lblartists.AutoSize = True
+        lblartists.Location = New Point(72, 50)
+        lblartists.Name = "lblartists"
+        lblartists.Size = New Size(41, 15)
+        lblartists.TabIndex = 0
+        lblartists.Text = "Label2"
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(lbladmin)
+        GroupBox1.Location = New Point(210, 108)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(200, 100)
+        GroupBox1.TabIndex = 0
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Admin"
+        ' 
+        ' lbladmin
+        ' 
+        lbladmin.AutoSize = True
+        lbladmin.Font = New Font("Bahnschrift", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        lbladmin.Location = New Point(75, 30)
+        lbladmin.Name = "lbladmin"
+        lbladmin.Size = New Size(35, 39)
+        lbladmin.TabIndex = 0
+        lbladmin.Text = "0"
         ' 
         ' Form1
         ' 
@@ -191,37 +267,51 @@ Partial Class Form1
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ControlLightLight
         ClientSize = New Size(800, 450)
-        Controls.Add(TabControl1)
+        Controls.Add(home)
+        Controls.Add(StatusStrip1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "Form1"
         Text = "Interscope Records"
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
-        TabControl1.ResumeLayout(False)
-        TabPage1.ResumeLayout(False)
-        TabPage1.PerformLayout()
-        TabControl2.ResumeLayout(False)
         StatusStrip1.ResumeLayout(False)
         StatusStrip1.PerformLayout()
+        home.ResumeLayout(False)
+        home.PerformLayout()
+        GroupBox4.ResumeLayout(False)
+        GroupBox4.PerformLayout()
+        GBAlbums.ResumeLayout(False)
+        GBAlbums.PerformLayout()
+        GroupBox2.ResumeLayout(False)
+        GroupBox2.PerformLayout()
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
-    Friend WithEvents TabPage3 As TabPage
-    Friend WithEvents TabPage4 As TabPage
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HelpToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContactToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents miniToolStrip As StatusStrip
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
-    Friend WithEvents TabControl2 As TabControl
-    Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents TabPage6 As TabPage
     Friend WithEvents lblWelcome As ToolStripStatusLabel
+    Friend WithEvents home As GroupBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GBAlbums As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents lbldash As Label
+    Friend WithEvents lblorders As Label
+    Friend WithEvents lblalbums As Label
+    Friend WithEvents lblartists As Label
+    Friend WithEvents lbladmin As Label
+    Friend WithEvents btnArtist As Button
+    Friend WithEvents btnOrder As Button
+    Friend WithEvents btnAdmin As Button
+    Friend WithEvents btnAlbum As Button
 End Class

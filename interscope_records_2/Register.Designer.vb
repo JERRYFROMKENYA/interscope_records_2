@@ -31,6 +31,8 @@ Partial Class RegisterAdmin
         txtpw = New TextBox()
         txtxpw = New TextBox()
         Button1 = New Button()
+        Label5 = New Label()
+        txtname = New TextBox()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -38,7 +40,7 @@ Partial Class RegisterAdmin
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(233, 37)
+        Label1.Location = New Point(216, 9)
         Label1.Name = "Label1"
         Label1.Size = New Size(164, 50)
         Label1.TabIndex = 0
@@ -112,12 +114,30 @@ Partial Class RegisterAdmin
         Button1.Text = "Register"
         Button1.UseVisualStyleBackColor = True
         ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(276, 81)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(61, 15)
+        Label5.TabIndex = 9
+        Label5.Text = "Full Name"
+        ' 
+        ' txtname
+        ' 
+        txtname.Location = New Point(392, 81)
+        txtname.Name = "txtname"
+        txtname.Size = New Size(230, 23)
+        txtname.TabIndex = 10
+        ' 
         ' RegisterAdmin
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = SystemColors.ControlLightLight
         ClientSize = New Size(800, 450)
+        Controls.Add(txtname)
+        Controls.Add(Label5)
         Controls.Add(Button1)
         Controls.Add(txtxpw)
         Controls.Add(txtpw)
@@ -128,7 +148,7 @@ Partial Class RegisterAdmin
         Controls.Add(PictureBox1)
         Controls.Add(Label1)
         Name = "RegisterAdmin"
-        Text = "Form2"
+        Text = "Register Admin"
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
@@ -143,4 +163,6 @@ Partial Class RegisterAdmin
     Friend WithEvents txtpw As TextBox
     Friend WithEvents txtxpw As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtname As TextBox
 End Class
